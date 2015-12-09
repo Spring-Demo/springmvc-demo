@@ -11,8 +11,6 @@ import org.springframework.web.servlet.mvc.AbstractController;
 
 import com.fun.mvc.entity.Account;
 
-
-
 public class LoginController extends AbstractController {
 	private String successView;
 	private String failView;
@@ -34,7 +32,8 @@ public class LoginController extends AbstractController {
 	}
 
 	@Override
-	protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	protected ModelAndView handleRequestInternal(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
 		String cardNo = request.getParameter("cardNo");
 		String password = request.getParameter("password");
 		Account account = getAccount(cardNo, password);
@@ -59,6 +58,5 @@ public class LoginController extends AbstractController {
 			return null;
 		}
 	}
-	
 
 }
